@@ -8,8 +8,11 @@ $idade = date_diff(date_create($nascimento), date_create($hoje));
 
 
 if (empty($nome)) {
+
     $dados = array(
+
         "mensagem" => 'Existem campos sem informações e/ou incompletos'
+        
     );
 } 
 
@@ -20,7 +23,7 @@ if (empty($nome)) {
         $dados = array(
 
             "alert" => 'alert-success',
-            "mensagem" => 'Olá' . $nome . ' a sua bebida favorita é: ' . $bebida
+            "mensagem" => 'Olá' . $nome . ' a sua bebida favorita é ' . $bebida . 'você é maior de idade e pode ingerir bebidas alcólicas'
 
         );
     } 
@@ -30,7 +33,7 @@ if (empty($nome)) {
         $dados = array(
 
             "alert" => 'alert-danger',
-            "mensagem" => 'Você é menor de idade! ' . $nome . ' não pode beber' 
+            "mensagem" => 'Você é menor de idade! ' . $nome . ' não pode beber por enquanto, espere mais um pouco' 
 
         );
     }

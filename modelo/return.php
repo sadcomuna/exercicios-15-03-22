@@ -1,14 +1,18 @@
 <?php
 
-$nome = $_REQUEST['NOME'];
-$bebida = $_REQUEST['BEBIDA'];
-$nascimento = $_REQUEST['ANO'];
+$nome = $_REQUEST['nome'];
+
+$bebida = $_REQUEST['bebida'];
+
+$nascimento = $_REQUEST['ano'];
+
 $hoje = date("Y-m-d");
+
 $idade = date_diff(date_create($nascimento), date_create($hoje));
 
 
 if (empty($nome)) {
-    
+
     $dados = array(
 
         "mensagem" => 'Existem campos sem informações e/ou incompletos'
@@ -22,7 +26,7 @@ if (empty($nome)) {
         $dados = array(
 
             "alert" => 'alert-success',
-            "mensagem" => 'Olá' . $nome . ', A sua bebida favorita é: ' . $bebida
+            "mensagem" => 'Olá ' . $nome . ', A sua bebida favorita é: ' . $bebida . 'e é maior de idade, pode ingerir bebidas alcólicas (❤ω❤) '
 
         );
     } 
@@ -31,8 +35,8 @@ if (empty($nome)) {
 
         $dados = array(
 
-            "alert" => 'alert-danger',
-            "mensagem" => 'Você é menor de idade! ' . $nome . ' não pode beber' 
+            "alert" => 'alert-success',
+            "mensagem" => 'Você é menor de idade! ' . $nome . ' não pode beber ainda, espere mais um pouco (--_--)' 
 
         );
     }
